@@ -62,7 +62,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="../../Vendor/LibD;../../Vendor/OrangeDump/Bugtrap;../../Vendor/BASS;../../Vendor/lua-5.1.4/src;../../Vendor/DirectMusic;../../Vendor/DirectShow/lib;../../vendor\OrangeDump\BreakPad\src\client\windows\Debug\lib"
+				AdditionalLibraryDirectories="../../Vendor/LibD;../../Vendor/OrangeDump/Bugtrap;../../Vendor/BASS;../../Vendor/lua-5.1.4/src;../../Vendor/DirectMusic;../../Vendor/DirectShow/lib;"
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				TargetMachine="1"
@@ -116,7 +116,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
-				AdditionalIncludeDirectories="../AGF;../../Vendor/OrangeDump;../../Vendor/BASS;./sound;./snow;../../Vendor/OrangeIni;../../Vendor/lua-5.1.4/src;../../Vendor/DirectMusic;../../Vendor/DirectX9.0/include;../DXUtil;./Font"
+				AdditionalIncludeDirectories="./LuaTinker;../../Vendor/D3DCommon/Include;../AGF;../../Vendor/OrangeDump;../../Vendor/BASS;./sound;./snow;../../Vendor/OrangeIni;../../Vendor/lua-5.1.4/src;../../Vendor/DirectMusic;../../Vendor/DirectX9.0/include;../DXUtil;./Font"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
@@ -136,6 +136,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				LinkIncremental="1"
+				AdditionalLibraryDirectories="../../Vendor/Lib;../../Vendor/OrangeDump/Bugtrap;../../Vendor/BASS;../../Vendor/lua-5.1.4/src;../../Vendor/DirectMusic;../../Vendor/DirectShow/lib;"
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				OptimizeReferences="2"
