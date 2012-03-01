@@ -12,7 +12,6 @@ enum enumExceptionHandler
 {	
 	EH_MINIDUMP = 0, //미니덤프 클래스
 	EH_BUGTRAP, //버그트랩
-	EH_BREAKPAD, //구글 브레이크 패드
 	EH_USER_DEFINED, //로그 및 닥터 왓슨
 	EH_BUGTRAP_MIX, //버그트랩과 사용자 정의 핸들러 Mix
 	EH_MAX,
