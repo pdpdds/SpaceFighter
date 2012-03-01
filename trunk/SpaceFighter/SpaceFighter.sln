@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AGF", "AGF\AGF.vcproj", "{4BD2C0B0-6476-4915-8ED4-99FD664FBB16}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SpaceFighter", "SpaceFighter\SpaceFighter.vcproj", "{7812CE38-2511-4767-9E1F-03ED1685D753}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4BD2C0B0-6476-4915-8ED4-99FD664FBB16} = {4BD2C0B0-6476-4915-8ED4-99FD664FBB16}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4BD2C0B0-6476-4915-8ED4-99FD664FBB16}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4BD2C0B0-6476-4915-8ED4-99FD664FBB16}.Debug|Win32.Build.0 = Debug|Win32
+		{4BD2C0B0-6476-4915-8ED4-99FD664FBB16}.Release|Win32.ActiveCfg = Release|Win32
+		{4BD2C0B0-6476-4915-8ED4-99FD664FBB16}.Release|Win32.Build.0 = Release|Win32
+		{7812CE38-2511-4767-9E1F-03ED1685D753}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7812CE38-2511-4767-9E1F-03ED1685D753}.Debug|Win32.Build.0 = Debug|Win32
+		{7812CE38-2511-4767-9E1F-03ED1685D753}.Release|Win32.ActiveCfg = Release|Win32
+		{7812CE38-2511-4767-9E1F-03ED1685D753}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
