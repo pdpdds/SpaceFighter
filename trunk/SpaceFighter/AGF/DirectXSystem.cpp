@@ -5,7 +5,7 @@
 #include "PannelManager.h"
 #include "lua.hpp"
 #include "LuaBindPanel.h"
-#include <atlbase.h>
+//#include <atlbase.h>
 #include "PictureBox.h"
 #include "Pannel.h"
 #include "ScreenMgr.h"
@@ -472,10 +472,10 @@ HRESULT CDirectXSystem::Create3DSprite(LPDIRECT3DTEXTURE9 &Test_Texture,LPDIRECT
 		return hr;
 
 
-	(void)StringCchCopy(szFilename, sizeof(szFilename),lpstr);
+	/*(void)StringCchCopy(szFilename, sizeof(szFilename),lpstr);
 	USES_CONVERSION;
 
-	(void)StringCchCopyW(wFileName, MAX_PATH, T2W(szFilename));
+	(void)StringCchCopyW(wFileName, MAX_PATH, T2W(szFilename));*/
 
 	/*if (FAILED(hr = D3DXCreateTextureFromFileEx(m_pd3dDevice, wFileName, 
 	0, 0, 1, 0, D3DFMT_A8R8G8B8, D3DPOOL_MANAGED, D3DX_DEFAULT, D3DX_DEFAULT,
@@ -486,7 +486,7 @@ HRESULT CDirectXSystem::Create3DSprite(LPDIRECT3DTEXTURE9 &Test_Texture,LPDIRECT
 
 	D3DXCreateTextureFromFile(
 		pd3dDevice,
-		wFileName,
+		lpstr,
 		&Test_Texture);  	
 
 	return hr;
