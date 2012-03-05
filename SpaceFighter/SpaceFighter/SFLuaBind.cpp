@@ -6,7 +6,7 @@
 #include "SFScene.h"
 #include "SFObjectFactory.h"
 
-void AddGameObjectPool(lua_tinker::table ExternalDesc)
+void AddPlanePool(lua_tinker::table ExternalDesc)
 {
 	static int id = 0;
 	id++;
@@ -33,13 +33,13 @@ void AddGameObjectPool(lua_tinker::table ExternalDesc)
 	pPlane->SetObjectType(Desc.ObjectType);
 	pPlane->SetTarget(pScene->GetHandlingObject());
 
-	pScene->AddGameObjectPool(id, pPlane);
+	pScene->AddPlanePool(id, pPlane);
 }
 
 
 void RegisterAllLuaBinds(lua_State* L)
 {
 	// LuaTinker 를 이용해서 함수를 등록한다.
-	lua_tinker::def(L, "AddGameObjectPool", AddGameObjectPool);
+	lua_tinker::def(L, "AddPlanePool", AddPlanePool);
 };
 

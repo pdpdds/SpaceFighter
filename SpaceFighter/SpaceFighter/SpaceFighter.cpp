@@ -39,6 +39,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 	CEHModuleManager ModuleManger;
 	//if(FALSE == ModuleManger.Install(DL_MY_HANDLER_STACKOVERFLOW, EH_BUGTRAP))
 	if(FALSE == ModuleManger.Install(DL_MY_HANDLER_STACKOVERFLOW, EH_BUGTRAP_MIX))
+	
 	{
 		printf("예외 핸들러 설치 실패\n");
 	}

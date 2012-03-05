@@ -10,7 +10,7 @@ class SFWeaponTwo :  public SFWeapon
 	};
 
 public:
-	SFWeaponTwo(GameObject* pOwner, WeaponInfo& Info);
+	SFWeaponTwo(SFPlane* pOwner, WeaponInfo& Info);
 	virtual ~SFWeaponTwo(void);
 
 	virtual BOOL UpdateWeapon(float fElapsedTime) override;

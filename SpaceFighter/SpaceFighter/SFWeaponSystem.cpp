@@ -7,10 +7,11 @@
 #include "SFWeaponDefault.h"
 #include "SFWeaponFireWork.h"
 #include "SFWeaponTwo.h"
+#include "SFPlane.h"
 
 extern CSound* g_pSoundFire;
 
-SFWeaponSystem::SFWeaponSystem( GameObject* pObject )
+SFWeaponSystem::SFWeaponSystem( SFPlane* pObject )
 : m_pOwner(pObject)
 , m_CurrentFireObjectCount(0)
 , m_LastFiredTime(0)

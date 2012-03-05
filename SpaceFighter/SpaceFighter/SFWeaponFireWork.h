@@ -4,7 +4,7 @@
 class SFWeaponFireWork : public SFWeapon
 {
 public:
-	SFWeaponFireWork(GameObject* pOwner, WeaponInfo& Info);
+	SFWeaponFireWork(SFPlane* pOwner, WeaponInfo& Info);
 	virtual ~SFWeaponFireWork(void);
 
 	virtual BOOL UpdateWeapon(float fElapsedTime) override;

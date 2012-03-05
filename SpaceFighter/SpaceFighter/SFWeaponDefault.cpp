@@ -4,7 +4,7 @@
 #include "SFResAni.h"
 #include "OBB.h"
 
-SFWeaponDefault::SFWeaponDefault( GameObject* pOwner, WeaponInfo& Info )
+SFWeaponDefault::SFWeaponDefault( SFPlane* pOwner, WeaponInfo& Info )
 : SFWeapon(pOwner, Info)
 {
 	

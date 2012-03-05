@@ -6,11 +6,13 @@
 class SFBackGround;
 class GameObject;
 class SFWeapon;
+class SFPlane;
 
 class SFScene : public SFMessageReceiver
 {
-	typedef std::list<GameObject*> listGameObject;
-	typedef std::map<int, GameObject*> mapGameObjectPool;
+	typedef std::list<SFPlane*> listPlane;
+	typedef std::list<SFWeapon*> listWeaphon;
+	typedef std::map<int, SFPlane*> mapPlanePool;
 public:
 	SFScene(void);
 	virtual ~SFScene(void);
@@ -18,8 +20,8 @@ public:
 	virtual BOOL Init() = 0;
 
 	virtual void AddBackGround(SFBackGround* pBackGround) {m_pBackGround = pBackGround;}
-	virtual void AddGameObject(GameObject* pObject) {m_listGameObject.push_back(pObject);}
-	virtual void AddGameObjectPool(int TimeLine, GameObject* pObject) {m_mapGameObjectPool.insert(mapGameObjectPool::value_type(TimeLine, pObject));}
+	virtual void AddPlane(SFPlane* pPlane) {m_listPlane.push_back(pPlane);}
+	virtual void AddPlanePool(int TimeLine, SFPlane* pPlane) {m_mapPlanePool.insert(mapPlanePool::value_type(TimeLine, pPlane));}
 
 	BOOL Render(float fElapsedTime);
 	BOOL Update(float fTime, float fElapsedTime);
@@ -27,8 +29,8 @@ public:
 
 	BOOL ResetDevice( IDirect3DDevice9* pd3dDevice );
 
-	void SetHandlingObject(GameObject* pObject){m_pHandlingObject = pObject;}
-	GameObject* GetHandlingObject(){return m_pHandlingObject;}
+	void SetHandlingObject(SFPlane* pPlane){m_pHandlingObject = pPlane;}
+	SFPlane* GetHandlingObject(){return m_pHandlingObject;}
 
 	BOOL BoundingSphereCollisionCheck(GameObject* pTarget, GameObject* pEnemy);
 	BOOL SFScene::BoundingBoxCollisionCheck(GameObject* pTarget, GameObject* pEnemy);
@@ -51,14 +53,21 @@ protected:
 
 private:
 	SFBackGround* m_pBackGround;
-	listGameObject m_listGameObject;
-	listGameObject m_listFireObject;
-	listGameObject m_listEnemyFireObject;
-	mapGameObjectPool m_mapGameObjectPool;
+	listPlane m_listPlane;
+	listWeaphon m_listFireObject;
+	listWeaphon m_listEnemyFireObject;
+	mapPlanePool m_mapPlanePool;
 
-	GameObject* m_pHandlingObject;
+	SFPlane* m_pHandlingObject;
 
 	float m_SceneStartTime;
 
 	D3DXVECTOR4 m_WorldSize;
+
+protected:
+	BOOL UpdateEnemyObject(float fElapsedTime);
+	BOOL UpdateFireObject(float fElapsedTime);
+	BOOL UpdateEnemyFireObject( float fElapsedTime );
+	BOOL CheckPlayerWeaponEnemyIntersection( float fElapsedTime );
 };
+
