@@ -8,7 +8,7 @@
 
 extern CSound* g_pSoundFire;
 
-SFWeaponTwo::SFWeaponTwo( GameObject* pOwner, WeaponInfo& Info )
+SFWeaponTwo::SFWeaponTwo( SFPlane* pOwner, WeaponInfo& Info )
 : SFWeapon(pOwner, Info)
 {
 

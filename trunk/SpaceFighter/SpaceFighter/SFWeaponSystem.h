@@ -13,7 +13,7 @@ class SFWeaponSystem
 	friend class SFWeaponTwo;
 
 public:
-	SFWeaponSystem(GameObject* pObject);
+	SFWeaponSystem(SFPlane* pObject);
 	virtual ~SFWeaponSystem(void);
 
 	BOOL AddWeapon(int type, WeaponInfo& Info); //무기를 추가한다.
@@ -22,7 +22,7 @@ public:
 	BOOL CreateFireObject(float fElapsedTime); //미사일을 생성한다.
 	BOOL IsPossible();
 
-	GameObject* GetOwner(){return m_pOwner;}
+	SFPlane* GetOwner(){return m_pOwner;}
 
 	void ChangeWeapon();
 	int GetWeapon(){return m_Weapon;}
@@ -31,7 +31,7 @@ protected:
 	int m_CurrentFireObjectCount;
 
 private:
-	GameObject* m_pOwner;
+	SFPlane* m_pOwner;
 
 	mapWeapon m_mapWeapon;
 

@@ -3,7 +3,7 @@
 #include "SFSystem.h"
 
 
-SFWeapon::SFWeapon( GameObject* pOwner, WeaponInfo& Info )
+SFWeapon::SFWeapon( SFPlane* pOwner, WeaponInfo& Info )
 : m_pOwner(pOwner)
 , m_eMode(Morphing_0)
 {
@@ -82,7 +82,7 @@ BOOL SFWeapon::OnMessageEvent( GameObject* pSender, SFMessage& Msg )
 {
 	if(Msg.MessageID == MSG_PLANE_DIE)
 	{
-		if(pSender == GetOwner())
+		if(pSender == (GameObject*)GetOwner())
 			SetOwner(NULL);
 	}
 

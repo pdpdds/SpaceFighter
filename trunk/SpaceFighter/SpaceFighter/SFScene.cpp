@@ -39,34 +39,36 @@ BOOL SFScene::RenderBackGround( float fElapsedTime )
 
 BOOL SFScene::RenderGameObject( float fElapsedTime )
 {
-	GameObject* pGameObject = NULL;
-	listGameObject::iterator iter = m_listGameObject.begin();
+	SFPlane* pPlane = NULL;
+	listPlane::iterator iter = m_listPlane.begin();
 
-	for(;iter!= m_listGameObject.end(); iter++)
+	for(;iter!= m_listPlane.end(); iter++)
 	{
-		pGameObject = (*iter);
-		pGameObject->Render(fElapsedTime);
+		pPlane = (*iter);
+		pPlane->Render(fElapsedTime);
 	}
 
-	iter = m_listFireObject.begin();
-	for(;iter!= m_listFireObject.end(); iter++)
+	SFWeapon* pWeapon = NULL;
+
+	listWeaphon::iterator iter2 = m_listFireObject.begin();
+	for(;iter2!= m_listFireObject.end(); iter2++)
 	{
-		pGameObject = (*iter);
-		pGameObject->Render(fElapsedTime);
+		pWeapon = (*iter2);
+		pWeapon->Render(fElapsedTime);
 	}
 
-	iter = m_listEnemyFireObject.begin();
-	for(;iter!= m_listEnemyFireObject.end(); iter++)
+	iter2 = m_listEnemyFireObject.begin();
+	for(;iter2!= m_listEnemyFireObject.end(); iter2++)
 	{
-		pGameObject = (*iter);
-		pGameObject->Render(fElapsedTime);
+		pWeapon = (*iter2);
+		pWeapon->Render(fElapsedTime);
 	}
 
 	if(m_pHandlingObject)
 		m_pHandlingObject->Render(fElapsedTime);
 
-	iter = m_listGameObject.begin();
-	for(;iter!= m_listGameObject.end(); iter++)
+	/*iter = m_listEnemyObject.begin();
+	for(;iter!= m_listEnemyObject.end(); iter++)
 	{
 		pGameObject = (*iter);
 		//BoundingSphereCollisionCheck(GetHandlingObject(), pGameObject);
@@ -82,8 +84,8 @@ BOOL SFScene::RenderGameObject( float fElapsedTime )
 		}
 	}
 
-	iter = m_listGameObject.begin();
-	while(iter!= m_listGameObject.end())
+	iter = m_listEnemyObject.begin();
+	while(iter!= m_listEnemyObject.end())
 	{
 		listGameObject::iterator iter2 = m_listFireObject.begin();
 
@@ -107,7 +109,7 @@ BOOL SFScene::RenderGameObject( float fElapsedTime )
 		}
 
 		iter++;
-	}
+	}*/
 
 	return TRUE;
 }
@@ -124,98 +126,27 @@ BOOL SFScene::Update(float fTime, float fElapsedTime )
 //////////////////////////////////////////////////////////////////////
 	m_pBackGround->OnFrameMove(fTime, fElapsedTime);
 
-
 //////////////////////////////////////////////////////////////////////
 //GameObject Update
 //////////////////////////////////////////////////////////////////////
-	GameObject* pGameObject = NULL;
-	listGameObject::iterator iter = m_listGameObject.begin();
-
-	for(;iter!= m_listGameObject.end(); iter++)
-	{
-		pGameObject = (*iter);
-		pGameObject->Update(fElapsedTime);
-	}
-
-	iter = m_listGameObject.begin();
-	while(iter!= m_listGameObject.end())
-	{
-		pGameObject = (*iter);
-		if(pGameObject->GetDisable() == TRUE )//|| IsOutofSceneArea(pGameObject->GetPosition()))
-		{
-			iter = m_listGameObject.erase(iter);
-			
-			SFMessage msg;
-			msg.MessageID = MSG_PLANE_DIE;
-			SFMessageDispatcher::MessageDispatch(pGameObject, msg);
-			delete pGameObject;
-		}
-		else
-			iter++;
-	}
+	UpdateEnemyObject(fElapsedTime);
 
 //////////////////////////////////////////////////////////////////////
 //Handling GameObject Update
 //////////////////////////////////////////////////////////////////////
+
 	GetHandlingObject()->Update(fElapsedTime);
 	GetHandlingObject()->ProcessInput(fElapsedTime);
 
 //////////////////////////////////////////////////////////////////////
 //주인공의 미사일 객체들 업데이트
 //////////////////////////////////////////////////////////////////////
-	iter = m_listFireObject.begin();
-	for(;iter!= m_listFireObject.end(); iter++)
-	{
-		pGameObject = (*iter);
-		pGameObject->Update(fElapsedTime);
-	}
-
-
-	iter = m_listFireObject.begin();
-	while(iter!= m_listFireObject.end())
-	{
-		SFWeapon* pWeapon = (SFWeapon*)(*iter);
-		if(pWeapon->GetDisable() == TRUE || IsOutofSceneArea(pWeapon->GetPosition()))
-		{
-			iter = m_listFireObject.erase(iter);
-			SFPlane* pObject = (SFPlane*)pWeapon->GetOwner();
-
-			pObject->GetWeaponSystem()->m_CurrentFireObjectCount--;
-
-			delete pWeapon;
-		}
-		else
-			iter++;
-	}
+	UpdateFireObject(fElapsedTime);
 
 //////////////////////////////////////////////////////////////////////
 //적 미사일 객체들 업데이트
 //////////////////////////////////////////////////////////////////////
-	iter = m_listEnemyFireObject.begin();
-	for(;iter!= m_listEnemyFireObject.end(); iter++)
-	{
-		pGameObject = (*iter);
-		pGameObject->Update(fElapsedTime);
-	}
-
-
-	iter = m_listEnemyFireObject.begin();
-	while(iter!= m_listEnemyFireObject.end())
-	{
-		SFWeapon* pWeapon = (SFWeapon*)(*iter);
-		if(pWeapon->GetDisable() == TRUE || IsOutofSceneArea(pWeapon->GetPosition()))
-		{
-			iter = m_listEnemyFireObject.erase(iter);
-			SFPlane* pObject = (SFPlane*)pWeapon->GetOwner();
-			
-			if(NULL != pObject)
-				pObject->GetWeaponSystem()->m_CurrentFireObjectCount--;
-
-			delete pWeapon;
-		}
-		else
-			iter++;
-	}
+	UpdateEnemyFireObject(fElapsedTime);
 
 //////////////////////////////////////////////////////////////////////
 //주인공 비행기와 적기와의 충돌 체크
@@ -229,48 +160,7 @@ BOOL SFScene::Update(float fTime, float fElapsedTime )
 //////////////////////////////////////////////////////////////////////
 //주인공 무기와 오브젝트와의 충돌 체크
 //////////////////////////////////////////////////////////////////////
-
-	iter = m_listGameObject.begin();
-	while(iter!= m_listGameObject.end())
-	{
-		BOOL bFlag = FALSE;
-		listGameObject::iterator iter2 = m_listFireObject.begin();
-
-		while(iter2 != m_listFireObject.end())
-		{
-			
-			SFWeapon* pWeapon = (SFWeapon*)(*iter2);
-			if(TRUE == pWeapon->CheckIntersection(*iter))
-			{
-				SFPlane* pPlane = (SFPlane*)(*iter);
-				if(TRUE == pPlane->ProcessAttatcked(pWeapon))
-				{
-					delete pWeapon;
-
-					iter2 = m_listFireObject.erase(iter2);
-					iter = m_listGameObject.erase(iter);
-
-					SFPlane* pPlane = (SFPlane*)GetHandlingObject();
-					pPlane->GetWeaponSystem()->m_CurrentFireObjectCount--;
-
-					bFlag = TRUE;
-
-					break;
-				}
-			
-
-				
-			}
-			else
-			{
-				iter2++;
-			}
-		}
-		
-		if(bFlag == FALSE)
-			iter++;
-	}
-
+	CheckPlayerWeaponEnemyIntersection(fElapsedTime);
 
 //////////////////////////////////////////////////////////////////////
 //해당 시간에 등장할 적기 등록
@@ -323,14 +213,14 @@ BOOL SFScene::BoundingBoxCollisionCheck(GameObject* pTarget, GameObject* pEnemy)
 
 BOOL SFScene::AddFireObject( SFWeapon* pWeapon )
 {
-	m_listFireObject.push_back((GameObject*)pWeapon);
+	m_listFireObject.push_back(pWeapon);
 
 	return TRUE;
 }
 
 BOOL SFScene::AddEnemyFireObject( SFWeapon* pWeapon )
 {
-	m_listEnemyFireObject.push_back((GameObject*)pWeapon);
+	m_listEnemyFireObject.push_back(pWeapon);
 
 	return TRUE;
 }
@@ -348,25 +238,25 @@ BOOL SFScene::IsOutofSceneArea( D3DXVECTOR3* pPos )
 
 BOOL SFScene::AddWaitingGameObjectWithTimeLine(float fElapsedTime)
 {
-	mapGameObjectPool::iterator iter1 = m_mapGameObjectPool.begin();
-	mapGameObjectPool::iterator iter2 = m_mapGameObjectPool.begin();
+	mapPlanePool::iterator iter1 = m_mapPlanePool.begin();
+	mapPlanePool::iterator iter2;
 	m_SceneStartTime += fElapsedTime;
 
 	DWORD dwTime = m_SceneStartTime * 1000;
 
-	while(iter1 != m_mapGameObjectPool.end())
+	while(iter1 != m_mapPlanePool.end())
 	{
 		iter2 = iter1;
 
-		GameObject* pGameObject = iter1->second;
+		SFPlane* pPlane = iter1->second;
 
-		if(dwTime < pGameObject->GetTimeLine())
+		if(dwTime < pPlane->GetTimeLine())
 			break;
 
-		m_listGameObject.push_back(pGameObject);
+		m_listPlane.push_back(pPlane);
 
 		iter1++;
-		m_mapGameObjectPool.erase(iter2);
+		m_mapPlanePool.erase(iter2);
 	}
 	
 	return TRUE;
@@ -374,16 +264,16 @@ BOOL SFScene::AddWaitingGameObjectWithTimeLine(float fElapsedTime)
 
 BOOL SFScene::CheckPlayerEnemyIntersection()
 {
-	listGameObject::iterator iter = m_listGameObject.begin();
-	for(;iter!= m_listGameObject.end(); iter++)
+	listPlane::iterator iter = m_listPlane.begin();
+	for(;iter!= m_listPlane.end(); iter++)
 	{
-		GameObject* pGameObject = (*iter);
-		if(TRUE == GetHandlingObject()->CheckIntersection(pGameObject))
+		SFPlane* pPlane = (*iter);
+		if(TRUE == GetHandlingObject()->CheckIntersection(pPlane))
 		{
 			
-			if(TRUE == pGameObject->ProcessInteraction(GetHandlingObject()))
+			if(TRUE == pPlane->ProcessInteraction(GetHandlingObject()))
 			{
-				m_listGameObject.erase(iter);
+				m_listPlane.erase(iter);
 			}
 
 			GetHandlingObject()->SetDisable(TRUE);
@@ -392,14 +282,14 @@ BOOL SFScene::CheckPlayerEnemyIntersection()
 		}
 	}
 
-	listGameObject::iterator iterFireObject = m_listEnemyFireObject.begin();
+	listWeaphon::iterator iterFireObject = m_listEnemyFireObject.begin();
 	for(;iterFireObject!= m_listEnemyFireObject.end(); iterFireObject++)
 	{
-		GameObject* pGameObject = (*iterFireObject);
-		if(TRUE == GetHandlingObject()->CheckIntersection(pGameObject))
+		SFWeapon* pWeapon = (*iterFireObject);
+		if(TRUE == GetHandlingObject()->CheckIntersection(pWeapon))
 		{
 			GetHandlingObject()->SetDisable(TRUE);
-			delete pGameObject;
+			delete pWeapon;
 			m_listEnemyFireObject.erase(iterFireObject);
 
 			return TRUE;
@@ -411,11 +301,11 @@ BOOL SFScene::CheckPlayerEnemyIntersection()
 
 BOOL SFScene::OnMessageEvent( GameObject* pSender, SFMessage& Msg )
 {
-	listGameObject::iterator iterFireObject = m_listEnemyFireObject.begin();
+	listWeaphon::iterator iterFireObject = m_listEnemyFireObject.begin();
 	for(;iterFireObject!= m_listEnemyFireObject.end(); iterFireObject++)
 	{
-		GameObject* pGameObject = (*iterFireObject);
-		pGameObject->OnMessageEvent(pSender, Msg);
+		SFWeapon* pWeapon = (*iterFireObject);
+		pWeapon->OnMessageEvent(pSender, Msg);
 	}
 
 	return TRUE;
@@ -423,5 +313,149 @@ BOOL SFScene::OnMessageEvent( GameObject* pSender, SFMessage& Msg )
 
 BOOL SFScene::RenderLayer( float fElapsedTime )
 {
+	return TRUE;
+}
+
+BOOL SFScene::UpdateEnemyObject( float fElapsedTime )
+{
+	SFPlane* pPlane = NULL;
+	listPlane::iterator iter = m_listPlane.begin();
+
+	for(;iter!= m_listPlane.end(); iter++)
+	{
+		pPlane = (*iter);
+		pPlane->Update(fElapsedTime);
+	}
+
+	iter = m_listPlane.begin();
+	while(iter!= m_listPlane.end())
+	{
+		pPlane = (*iter);
+		if(pPlane->GetDisable() == TRUE )//|| IsOutofSceneArea(pGameObject->GetPosition()))
+		{
+			iter = m_listPlane.erase(iter);
+
+			SFMessage msg;
+			msg.MessageID = MSG_PLANE_DIE;
+			SFMessageDispatcher::MessageDispatch(pPlane, msg);
+			delete pPlane;
+		}
+		else
+			iter++;
+	}
+
+	return TRUE;
+}
+
+BOOL SFScene::UpdateFireObject( float fElapsedTime )
+{
+	SFWeapon* pWeapon = NULL;
+
+	listWeaphon::iterator iter = m_listFireObject.begin();
+	for(;iter!= m_listFireObject.end(); iter++)
+	{
+		pWeapon = (*iter);
+		pWeapon->Update(fElapsedTime);
+	}
+
+
+	iter = m_listFireObject.begin();
+	while(iter!= m_listFireObject.end())
+	{
+		SFWeapon* pWeapon = (*iter);
+		if(pWeapon->GetDisable() == TRUE || IsOutofSceneArea(pWeapon->GetPosition()))
+		{
+			iter = m_listFireObject.erase(iter);
+			SFPlane* pObject = pWeapon->GetOwner();
+
+			pObject->GetWeaponSystem()->m_CurrentFireObjectCount--;
+
+			delete pWeapon;
+		}
+		else
+			iter++;
+	}
+
+	return TRUE;
+}
+
+
+
+BOOL SFScene::UpdateEnemyFireObject( float fElapsedTime )
+{
+	SFWeapon* pWeapon = NULL;
+
+	listWeaphon::iterator iter = m_listEnemyFireObject.begin();
+
+	for(;iter!= m_listEnemyFireObject.end(); iter++)
+	{
+		pWeapon = (*iter);
+		pWeapon->Update(fElapsedTime);
+	}
+
+	iter = m_listEnemyFireObject.begin();
+	while(iter!= m_listEnemyFireObject.end())
+	{
+		pWeapon = (*iter);
+		if(pWeapon->GetDisable() == TRUE || IsOutofSceneArea(pWeapon->GetPosition()))
+		{
+			iter = m_listEnemyFireObject.erase(iter);
+			SFPlane* pPlane = pWeapon->GetOwner();
+
+			if(NULL != pPlane)
+				pPlane->GetWeaponSystem()->m_CurrentFireObjectCount--;
+
+			delete pWeapon;
+		}
+		else
+			iter++;
+	}
+
+	return TRUE;
+}
+
+BOOL SFScene::CheckPlayerWeaponEnemyIntersection( float fElapsedTime )
+{
+	listPlane::iterator iter = m_listPlane.begin();
+	while(iter!= m_listPlane.end())
+	{
+		BOOL bFlag = FALSE;
+
+		listWeaphon::iterator iter2 = m_listFireObject.begin();
+
+		while(iter2 != m_listFireObject.end())
+		{
+
+			SFWeapon* pWeapon = *iter2;
+			if(TRUE == pWeapon->CheckIntersection(*iter))
+			{
+				SFPlane* pPlane = (SFPlane*)(*iter);
+				if(TRUE == pPlane->ProcessAttatcked(pWeapon))
+				{
+					delete pWeapon;
+
+					iter2 = m_listFireObject.erase(iter2);
+					iter = m_listPlane.erase(iter);
+
+					SFPlane* pPlane = GetHandlingObject();
+					pPlane->GetWeaponSystem()->m_CurrentFireObjectCount--;
+
+					bFlag = TRUE;
+
+					break;
+				}
+
+
+
+			}
+			else
+			{
+				iter2++;
+			}
+		}
+
+		if(bFlag == FALSE)
+			iter++;
+	}
 	return TRUE;
 }

@@ -10,7 +10,7 @@
 
 extern CSound* g_pSoundFire;
 
-SFWeaponFireWork::SFWeaponFireWork( GameObject* pOwner, WeaponInfo& Info )
+SFWeaponFireWork::SFWeaponFireWork( SFPlane* pOwner, WeaponInfo& Info )
 : SFWeapon(pOwner, Info)
 {
 	

@@ -1,6 +1,8 @@
 #pragma once
 #include "GameObject.h"
 
+class SFPlane;
+
 class SFWeapon : public GameObject
 {
 	friend class SFWeaponSystem;
@@ -13,13 +15,13 @@ public:
 		Morphing_2,
 	};
 
-	SFWeapon( GameObject* pOwner, WeaponInfo& Info );
+	SFWeapon( SFPlane* pOwner, WeaponInfo& Info );
 	virtual ~SFWeapon(void);
 
 	virtual BOOL Update(float fElapsedTime) override;
 	virtual BOOL Render(float fElapsedTime) override;
-	GameObject* GetOwner(){return m_pOwner;}
-	void SetOwner(GameObject* pObject){m_pOwner = pObject;}
+	SFPlane* GetOwner(){return m_pOwner;}
+	void SetOwner(SFPlane* pObject){m_pOwner = pObject;}
 
 	WeaponInfo& GetWeaponInfo(){return m_WeaponInfo;}
 
@@ -33,7 +35,7 @@ public:
 protected:
 
 private:
-	GameObject* m_pOwner; //해당 발사체의 소유주
+	SFPlane* m_pOwner; //해당 발사체의 소유주
 
 	WeaponInfo m_WeaponInfo;
 	eMorphingMode m_eMode;

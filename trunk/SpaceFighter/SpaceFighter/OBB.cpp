@@ -44,8 +44,11 @@ void OBB::SetSize(D3DXVECTOR3 size)
 
 void OBB::Render(D3DXMATRIX& matViewProj)
 {
-	/*if(m_pMesh != NULL)
+	SFSystem::GetInstance()->GetD3DDevice()->SetRenderState( D3DRS_FILLMODE, D3DFILL_WIREFRAME );
+
+	if(m_pMesh != NULL)
 	{
+		
 		D3DXMATRIX p, r, world;
 		D3DXMATRIX matView, matProj;
 
@@ -64,7 +67,9 @@ void OBB::Render(D3DXMATRIX& matViewProj)
 
 		g_pEffect->EndPass();
 		g_pEffect->End();
-	}*/
+	}
+
+	SFSystem::GetInstance()->GetD3DDevice()->SetRenderState( D3DRS_FILLMODE, D3DFILL_SOLID );
 }
 
 bool OBB::Intersect(OBB &b)

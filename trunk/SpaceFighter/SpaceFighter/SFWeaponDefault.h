@@ -4,7 +4,7 @@
 class SFWeaponDefault :  public SFWeapon
 {
 public:
-	SFWeaponDefault(GameObject* pOwner, WeaponInfo& Info);
+	SFWeaponDefault(SFPlane* pOwner, WeaponInfo& Info);
 	virtual ~SFWeaponDefault(void);
 
 	virtual BOOL UpdateWeapon(float fElapsedTime) override;

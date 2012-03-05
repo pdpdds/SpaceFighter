@@ -31,40 +31,40 @@ GameObjectDesc.PosZ = 120
 GameObjectDesc.PosX = 40
 GameObjectDesc.TimeLine = 1000
 GameObjectDesc.AIPattern = 'AIPattern1'
-AddGameObjectPool(GameObjectDesc)
+AddPlanePool(GameObjectDesc)
 
 -----------------------------------------------------------------------------
 
 GameObjectDesc.PosX = 0
 GameObjectDesc.TimeLine = 1000
-AddGameObjectPool(GameObjectDesc)
+AddPlanePool(GameObjectDesc)
 
 GameObjectDesc.PosX = -40
 GameObjectDesc.TimeLine = 1500
 GameObjectDesc.AIPattern = 'AIStraight'
-AddGameObjectPool(GameObjectDesc)
+AddPlanePool(GameObjectDesc)
 
 --GameObjectDesc.PosX = -40
 --GameObjectDesc.TimeLine = 5500
---AddGameObjectPool(GameObjectDesc)
+--AddPlanePool(GameObjectDesc)
 
 --GameObjectDesc.PosX = 0
 --GameObjectDesc.TimeLine = 5500
 --GameObjectDesc.AIPattern = 'AIStraight'
---AddGameObjectPool(GameObjectDesc)
+--AddPlanePool(GameObjectDesc)
 
 --GameObjectDesc.PosX = 40
 --GameObjectDesc.TimeLine = 5500
 --GameObjectDesc.AIPattern = 'AIStraight'
---AddGameObjectPool(GameObjectDesc)
+--AddPlanePool(GameObjectDesc)
 
 --GameObjectDesc.PosX = 90
 --GameObjectDesc.TimeLine = 12000
---AddGameObjectPool(GameObjectDesc)
+--AddPlanePool(GameObjectDesc)
 
 --GameObjectDesc.PosX = -10
 --GameObjectDesc.TimeLine = 12000
---AddGameObjectPool(GameObjectDesc)
+--AddPlanePool(GameObjectDesc)
 
 GameObjectDesc.ObjectType = OBJECT_BOMB
 GameObjectDesc.ResID = EXPLSION_EFFECT_1
@@ -76,7 +76,7 @@ GameObjectDesc.TimeLine = 2000
 GameObjectDesc.VelX = 0
 GameObjectDesc.VelY = 0
 GameObjectDesc.VelZ = 0
-AddGameObjectPool(GameObjectDesc)
+AddPlanePool(GameObjectDesc)
 
 GameObjectDesc.ObjectType = OBJECT_TRIGGER
 GameObjectDesc.ResID = EXPLSION_EFFECT_1
@@ -88,4 +88,4 @@ GameObjectDesc.TimeLine = 2100
 GameObjectDesc.VelX = 0
 GameObjectDesc.VelY = 0
 GameObjectDesc.VelZ = -18
-AddGameObjectPool(GameObjectDesc)
+AddPlanePool(GameObjectDesc)
