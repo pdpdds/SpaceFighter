@@ -22,5 +22,4 @@ protected:
 private:
 	GameObject* m_pOwner;
 	BOOL m_bActivate;
-	
 };

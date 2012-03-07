@@ -7,11 +7,13 @@ class SFBackGround;
 class GameObject;
 class SFWeapon;
 class SFPlane;
+class SFPlayerPlane;
 
 class SFScene : public SFMessageReceiver
 {
+public:
 	typedef std::list<SFPlane*> listPlane;
-	typedef std::list<SFWeapon*> listWeaphon;
+	typedef std::list<SFWeapon*> listWeapon;
 	typedef std::map<int, SFPlane*> mapPlanePool;
 public:
 	SFScene(void);
@@ -29,8 +31,8 @@ public:
 
 	BOOL ResetDevice( IDirect3DDevice9* pd3dDevice );
 
-	void SetHandlingObject(SFPlane* pPlane){m_pHandlingObject = pPlane;}
-	SFPlane* GetHandlingObject(){return m_pHandlingObject;}
+	void SetHandlingObject(SFPlayerPlane* pPlane){m_pHandlingObject = pPlane;}
+	SFPlayerPlane* GetHandlingObject(){return m_pHandlingObject;}
 
 	BOOL BoundingSphereCollisionCheck(GameObject* pTarget, GameObject* pEnemy);
 	BOOL SFScene::BoundingBoxCollisionCheck(GameObject* pTarget, GameObject* pEnemy);
@@ -38,13 +40,16 @@ public:
 	BOOL AddFireObject(SFWeapon* pWeapon);
 	BOOL AddEnemyFireObject( SFWeapon* pWeapon );
 	BOOL AddWaitingGameObjectWithTimeLine(float fElapsedTime);
-	BOOL CheckPlayerEnemyIntersection();
+	BOOL OnCheckInterAction();
 
 	void SetWorldSize(D3DXVECTOR4& WorldSize){m_WorldSize = WorldSize;}
 	D3DXVECTOR4& GetWorldSize(){return m_WorldSize;}
 	BOOL IsOutofSceneArea(D3DXVECTOR3* pPos);
 
 	virtual BOOL OnMessageEvent(GameObject* pSender, SFMessage& Msg) override;
+
+	listPlane* GetPlaneList(){return &m_listPlane;}
+	listWeapon* GetEnemyWeaponList(){return &m_listEnemyFireObject;}
 
 protected:
 	BOOL RenderBackGround(float fElapsedTime);
@@ -54,11 +59,11 @@ protected:
 private:
 	SFBackGround* m_pBackGround;
 	listPlane m_listPlane;
-	listWeaphon m_listFireObject;
-	listWeaphon m_listEnemyFireObject;
+	listWeapon m_listFireObject;
+	listWeapon m_listEnemyFireObject;
 	mapPlanePool m_mapPlanePool;
 
-	SFPlane* m_pHandlingObject;
+	SFPlayerPlane* m_pHandlingObject;
 
 	float m_SceneStartTime;
 

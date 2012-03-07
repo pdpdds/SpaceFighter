@@ -739,14 +739,6 @@
 				>
 			</File>
 			<File
-				RelativePath=".\SFPlayerPlane.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\SFPlayerPlane.h"
-				>
-			</File>
-			<File
 				RelativePath=".\SFTrigger.cpp"
 				>
 			</File>
@@ -844,6 +836,58 @@
 			</File>
 			<File
 				RelativePath=".\SFGameStateTitle.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="PlayerFSM"
+			>
+			<File
+				RelativePath=".\SFPlayerDie.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\SFPlayerDie.h"
+				>
+			</File>
+			<File
+				RelativePath=".\SFPlayerFSM.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\SFPlayerFSM.h"
+				>
+			</File>
+			<File
+				RelativePath=".\SFPlayerInit.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\SFPlayerInit.h"
+				>
+			</File>
+			<File
+				RelativePath=".\SFPlayerLive.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\SFPlayerLive.h"
+				>
+			</File>
+			<File
+				RelativePath=".\SFPlayerPlane.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\SFPlayerPlane.h"
+				>
+			</File>
+			<File
+				RelativePath=".\SFPlayerState.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\SFPlayerState.h"
 				>
 			</File>
 		</Filter>
