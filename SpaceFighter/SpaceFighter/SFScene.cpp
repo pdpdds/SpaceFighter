@@ -267,11 +267,24 @@ BOOL SFScene::OnCheckInterAction()
 
 BOOL SFScene::OnMessageEvent( GameObject* pSender, SFMessage& Msg )
 {
-	listWeapon::iterator iterFireObject = m_listEnemyFireObject.begin();
-	for(;iterFireObject!= m_listEnemyFireObject.end(); iterFireObject++)
+	if (Msg.ObjectType == OBJECT_ALL || Msg.ObjectType == OBJECT_WEAPON)
 	{
-		SFWeapon* pWeapon = (*iterFireObject);
-		pWeapon->OnMessageEvent(pSender, Msg);
+		listWeapon::iterator iterFireObject = m_listEnemyFireObject.begin();
+		for(;iterFireObject!= m_listEnemyFireObject.end(); iterFireObject++)
+		{
+			SFWeapon* pWeapon = (*iterFireObject);
+			pWeapon->OnMessageEvent(pSender, Msg);
+		}
+	}
+
+	if (Msg.ObjectType == OBJECT_ALL)
+	{
+		listPlane::iterator Plane = m_listPlane.begin();
+		for(;Plane!= m_listPlane.end(); Plane++)
+		{
+			SFPlane* pPlane = (*Plane);
+			pPlane->OnMessageEvent(pSender, Msg);
+		}
 	}
 
 	return TRUE;
@@ -303,6 +316,7 @@ BOOL SFScene::UpdateEnemyObject( float fElapsedTime )
 
 			SFMessage msg;
 			msg.MessageID = MSG_PLANE_DIE;
+			msg.ObjectType = OBJECT_WEAPON;
 			SFMessageDispatcher::MessageDispatch(pPlane, msg);
 			delete pPlane;
 		}

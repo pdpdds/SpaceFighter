@@ -20,6 +20,7 @@ public:
 	BOOL Update(float fElapsedTimer);
 	virtual BOOL ProcessInteraction(GameObject* pObject) override;
 	virtual BOOL ProcessAttatcked(GameObject* pAttackObject) override;
+	virtual BOOL OnMessageEvent(GameObject* pSender, SFMessage& Msg) override;
 
 	SFWeaponSystem* GetWeaponSystem(){return &m_WeaponSystem;}
 

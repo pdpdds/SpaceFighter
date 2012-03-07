@@ -94,6 +94,7 @@ BOOL SFPlane::ProcessInteraction( GameObject* pObject )
 
 	SFMessage msg;
 	msg.MessageID = MSG_PLANE_DIE;
+	msg.ObjectType = OBJECT_WEAPON;
 	SFMessageDispatcher::MessageDispatch(this, msg);
 	delete this;
 
@@ -119,10 +120,26 @@ BOOL SFPlane::ProcessAttatcked( GameObject* pAttackObject )
 	{
 		SFMessage msg;
 		msg.MessageID = MSG_PLANE_DIE;
+		msg.ObjectType = OBJECT_WEAPON;
 		SFMessageDispatcher::MessageDispatch(this, msg);
 
 		return TRUE;
 	}
 
 	return FALSE;
+}
+
+BOOL SFPlane::OnMessageEvent(GameObject* pSender, SFMessage& Msg)
+{
+	if(Msg.MessageID == MSG_PLAYER_DIE)
+	{
+		//SetTarget(NULL);
+		//일단은 적의 입장에서 타겟을 없애지 말 것...
+	}
+	else if(Msg.MessageID == MSG_PLAYER_LIVE)
+	{
+		SetTarget(pSender);
+	}
+	
+	return TRUE;
 }

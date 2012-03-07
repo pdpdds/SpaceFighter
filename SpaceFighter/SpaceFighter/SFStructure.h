@@ -25,6 +25,7 @@ typedef struct tag_GameObjectDesc
 
 typedef struct tag_SFMessage
 {
+	int ObjectType;
 	int MessageID;
 	
 }SFMessage;
