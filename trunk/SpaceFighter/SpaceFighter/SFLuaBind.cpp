@@ -31,7 +31,7 @@ void AddPlanePool(lua_tinker::table ExternalDesc)
 
 	pPlane->Init(Desc);
 	pPlane->SetObjectType(Desc.ObjectType);
-	pPlane->SetTarget(pScene->GetHandlingObject());
+	pPlane->SetTarget((SFPlane*)pScene->GetHandlingObject());
 
 	pScene->AddPlanePool(id, pPlane);
 }

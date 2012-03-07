@@ -12,4 +12,12 @@ public:
 
 	virtual BOOL Render(float fElapsedTime) override;
 	virtual BOOL Update(float fElapsedTime) override;
+
+	SFPlayerFSM* GetFSM(){return m_pFSM;}
+
+protected:
+
+private:
+
+	SFPlayerFSM* m_pFSM;
 };

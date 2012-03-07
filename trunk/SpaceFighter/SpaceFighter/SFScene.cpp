@@ -8,6 +8,8 @@
 #include "SFWeapon.h"
 #include "SFPlane.h"
 #include "SFMessageDispatcher.h"
+#include "SFPlayerFSM.h"
+#include "SFPlayerPlane.h"
 
 SFScene::SFScene(void)
 : m_pBackGround(NULL)
@@ -50,7 +52,7 @@ BOOL SFScene::RenderGameObject( float fElapsedTime )
 
 	SFWeapon* pWeapon = NULL;
 
-	listWeaphon::iterator iter2 = m_listFireObject.begin();
+	listWeapon::iterator iter2 = m_listFireObject.begin();
 	for(;iter2!= m_listFireObject.end(); iter2++)
 	{
 		pWeapon = (*iter2);
@@ -151,11 +153,7 @@ BOOL SFScene::Update(float fTime, float fElapsedTime )
 //////////////////////////////////////////////////////////////////////
 //주인공 비행기와 적기와의 충돌 체크
 //////////////////////////////////////////////////////////////////////
-	
-	if(GetHandlingObject()->GetDisable() == FALSE)
-	{
-		CheckPlayerEnemyIntersection();
-	}
+	OnCheckInterAction();
 
 //////////////////////////////////////////////////////////////////////
 //주인공 무기와 오브젝트와의 충돌 체크
@@ -262,46 +260,14 @@ BOOL SFScene::AddWaitingGameObjectWithTimeLine(float fElapsedTime)
 	return TRUE;
 }
 
-BOOL SFScene::CheckPlayerEnemyIntersection()
+BOOL SFScene::OnCheckInterAction()
 {
-	listPlane::iterator iter = m_listPlane.begin();
-	for(;iter!= m_listPlane.end(); iter++)
-	{
-		SFPlane* pPlane = (*iter);
-		if(TRUE == GetHandlingObject()->CheckIntersection(pPlane))
-		{
-			
-			if(TRUE == pPlane->ProcessInteraction(GetHandlingObject()))
-			{
-				m_listPlane.erase(iter);
-			}
-
-			GetHandlingObject()->SetDisable(TRUE);
-			
-			return TRUE;
-		}
-	}
-
-	listWeaphon::iterator iterFireObject = m_listEnemyFireObject.begin();
-	for(;iterFireObject!= m_listEnemyFireObject.end(); iterFireObject++)
-	{
-		SFWeapon* pWeapon = (*iterFireObject);
-		if(TRUE == GetHandlingObject()->CheckIntersection(pWeapon))
-		{
-			GetHandlingObject()->SetDisable(TRUE);
-			delete pWeapon;
-			m_listEnemyFireObject.erase(iterFireObject);
-
-			return TRUE;
-		}
-	}
-
-	return FALSE;
+	return GetHandlingObject()->GetFSM()->OnCheckInterAction(this);
 }
 
 BOOL SFScene::OnMessageEvent( GameObject* pSender, SFMessage& Msg )
 {
-	listWeaphon::iterator iterFireObject = m_listEnemyFireObject.begin();
+	listWeapon::iterator iterFireObject = m_listEnemyFireObject.begin();
 	for(;iterFireObject!= m_listEnemyFireObject.end(); iterFireObject++)
 	{
 		SFWeapon* pWeapon = (*iterFireObject);
@@ -351,7 +317,7 @@ BOOL SFScene::UpdateFireObject( float fElapsedTime )
 {
 	SFWeapon* pWeapon = NULL;
 
-	listWeaphon::iterator iter = m_listFireObject.begin();
+	listWeapon::iterator iter = m_listFireObject.begin();
 	for(;iter!= m_listFireObject.end(); iter++)
 	{
 		pWeapon = (*iter);
@@ -385,7 +351,7 @@ BOOL SFScene::UpdateEnemyFireObject( float fElapsedTime )
 {
 	SFWeapon* pWeapon = NULL;
 
-	listWeaphon::iterator iter = m_listEnemyFireObject.begin();
+	listWeapon::iterator iter = m_listEnemyFireObject.begin();
 
 	for(;iter!= m_listEnemyFireObject.end(); iter++)
 	{
@@ -421,7 +387,7 @@ BOOL SFScene::CheckPlayerWeaponEnemyIntersection( float fElapsedTime )
 	{
 		BOOL bFlag = FALSE;
 
-		listWeaphon::iterator iter2 = m_listFireObject.begin();
+		listWeapon::iterator iter2 = m_listFireObject.begin();
 
 		while(iter2 != m_listFireObject.end())
 		{

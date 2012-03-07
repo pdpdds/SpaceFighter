@@ -4,6 +4,7 @@
 #include "SFWeaponSystem.h"
 
 class SFAIPattern;
+class SFPlayerFSM;
 
 class SFPlane : public GameObject
 {
