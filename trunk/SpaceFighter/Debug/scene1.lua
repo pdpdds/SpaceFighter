@@ -9,7 +9,7 @@ PLANE_1	  = 8
 PLANE_2 = 9
 PLANE_3 = 10
 PLANE_4 = 11
-SF_RES_TRIGGER = 12
+ITEM_BOX = 12
 
 ------------------------------------------------------------------------------
 OBJECT_PLAYER  = 0
@@ -79,11 +79,11 @@ GameObjectDesc.VelZ = 0
 AddPlanePool(GameObjectDesc)
 
 GameObjectDesc.ObjectType = OBJECT_TRIGGER
-GameObjectDesc.ResID = EXPLSION_EFFECT_1
-GameObjectDesc.AIPattern = 'NULL'
+GameObjectDesc.ResID = STAR_SAIL
+GameObjectDesc.AIPattern = 'AIStraight'
 GameObjectDesc.PosX = 80
 GameObjectDesc.PosY = 0
-GameObjectDesc.PosZ = 0
+GameObjectDesc.PosZ = 120
 GameObjectDesc.TimeLine = 2100
 GameObjectDesc.VelX = 0
 GameObjectDesc.VelY = 0
