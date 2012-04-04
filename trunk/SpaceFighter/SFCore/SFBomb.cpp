@@ -97,7 +97,7 @@ BOOL SFBomb::Update( float fElapsedTime )
 
 		if(m_fTime > 8.0f)
 		{
-			//SetDisable(TRUE);
+			SetDisable(TRUE);
 		}
 	}
 
