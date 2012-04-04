@@ -397,6 +397,7 @@ BOOL SFScene::UpdateEnemyFireObject( float fElapsedTime )
 BOOL SFScene::CheckPlayerWeaponEnemyIntersection( float fElapsedTime )
 {
 	listPlane::iterator iter = m_listPlane.begin();
+
 	while(iter!= m_listPlane.end())
 	{
 		BOOL bFlag = FALSE;
@@ -412,9 +413,7 @@ BOOL SFScene::CheckPlayerWeaponEnemyIntersection( float fElapsedTime )
 				SFPlane* pPlane = (SFPlane*)(*iter);
 				if(TRUE == pPlane->ProcessAttatcked(pWeapon))
 				{
-					delete pWeapon;
-
-					iter2 = m_listFireObject.erase(iter2);
+					
 					iter = m_listPlane.erase(iter);
 
 					SFPlane* pPlane = GetHandlingObject();
@@ -424,6 +423,9 @@ BOOL SFScene::CheckPlayerWeaponEnemyIntersection( float fElapsedTime )
 
 					break;
 				}
+
+				delete pWeapon;
+				iter2 = m_listFireObject.erase(iter2);
 
 
 
