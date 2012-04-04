@@ -17,5 +17,6 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 
 	delete pMain;
 
+
 	return iRet;
 }
