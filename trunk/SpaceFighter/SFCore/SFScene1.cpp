@@ -24,7 +24,7 @@ SFScene1::~SFScene1(void)
 
 BOOL SFScene1::Init()
 {
-	SFBackGround* pBackGround = new SFBackGroundTerrain();
+	SFBackGround* pBackGround = new SFBackGroundWater();
 	pBackGround->Init();
 
 	g_pSound->Play( 0, DSBPLAY_LOOPING);

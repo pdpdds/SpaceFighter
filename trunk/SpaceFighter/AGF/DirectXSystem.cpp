@@ -385,6 +385,8 @@ int CDirectXSystem::Run(int Width, int Height, TCHAR* szGameTitle)
 	m_pInputSystem = new DirectInput( ((HINSTANCE)::GetWindowLong((DXUTGetHWND()), GWL_HINSTANCE)) , DXUTGetHWND(), DISCL_NONEXCLUSIVE|DISCL_FOREGROUND, DISCL_NONEXCLUSIVE|DISCL_FOREGROUND);
 
 	InitEnvironment();
+
+	m_pd3dDevice->CreateStateBlock( D3DSBT_ALL, &m_pInitStateBlock ); 
 	
 	// Pass control to the sample framework for handling the message pump and 
 	// dispatching render calls. The sample framework will call your FrameMove 

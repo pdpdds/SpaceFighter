@@ -24,9 +24,13 @@ SFScene::~SFScene(void)
 
 BOOL SFScene::Render( float fElapsedTime )
 {
-	RenderBackGround(fElapsedTime);
-	RenderLayer(fElapsedTime);
-	RenderGameObject(fElapsedTime);
+	SFSystem* pSystem = (SFSystem*)SFSystem::GetInstance();
+	pSystem->GetInitStateBlock()->Apply();
+
+	RenderBackGround(fElapsedTime);	
+
+	//RenderLayer(fElapsedTime);
+	//RenderGameObject(fElapsedTime);
 
 	return TRUE;
 }
