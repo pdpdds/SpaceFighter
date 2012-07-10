@@ -52,6 +52,8 @@ public:
 		return m_pDirectXSystem;
 	}
 
+	IDirect3DStateBlock9* GetInitStateBlock(){return m_pInitStateBlock;}
+
 protected:
 	static CDirectXSystem* m_pDirectXSystem;
 	CSoundManager*	m_pSoundManager;
@@ -74,4 +76,6 @@ private:
 	INT			m_iMouseY;
 
 	CBassSoundManager* m_pBassSoundManager;
+
+	IDirect3DStateBlock9* m_pInitStateBlock;
 };

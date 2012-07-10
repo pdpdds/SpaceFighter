@@ -21,6 +21,7 @@ SFBackGroundWater::~SFBackGroundWater(void)
 
 BOOL SFBackGroundWater::OnRender( float fElapsedTime )
 {
+
 	SFSystem* pSystem = (SFSystem*)SFSystem::GetInstance();
 
 	// Reflection plane in local space.
@@ -37,6 +38,7 @@ BOOL SFBackGroundWater::OnRender( float fElapsedTime )
 	D3DXMATRIX WVPInvTrans;
 	D3DXMatrixInverse(&WVPInvTrans, 0, &(mWaterWorld*m_pCamera->viewProj()));
 	D3DXMatrixTranspose(&WVPInvTrans, &WVPInvTrans);
+
 	D3DXPLANE waterPlaneH;
 	D3DXPlaneTransform(&waterPlaneH, &waterPlaneL, &WVPInvTrans);
 
@@ -100,8 +102,6 @@ BOOL SFBackGroundWater::OnRender( float fElapsedTime )
 
 	//g_HUD.OnRender( 10 );
 	//g_SampleUI.OnRender( 10 );
-
-
 
 	// Present the backbuffer.
 
