@@ -29,8 +29,8 @@ BOOL SFScene::Render( float fElapsedTime )
 
 	RenderBackGround(fElapsedTime);	
 
-	//RenderLayer(fElapsedTime);
-	//RenderGameObject(fElapsedTime);
+	RenderLayer(fElapsedTime);
+	RenderGameObject(fElapsedTime);
 
 	return TRUE;
 }
