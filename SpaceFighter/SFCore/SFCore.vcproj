@@ -41,7 +41,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="./LuaTinker;../../Vendor/D3DCommon/Include;../AGF;../../Vendor/OrangeDump;../../Vendor/BASS;./sound;./snow;../../Vendor/OrangeIni;../../Vendor/lua-5.1.4/src;../../Vendor/DirectMusic;../DXUtil;./Font"
+				AdditionalIncludeDirectories="./LuaTinker;../../Vendor/D3DCommon/Include;../AGF;../../Vendor/OrangeDump;../../Vendor/BASS;./sound;./snow;../../Vendor/OrangeIni;&quot;../../Vendor/lua-5.1.4/src&quot;;../../Vendor/DirectMusic;../DXUtil;./Font;&quot;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_LIB"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -106,7 +106,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
-				AdditionalIncludeDirectories="./LuaTinker;../../Vendor/D3DCommon/Include;../AGF;../../Vendor/OrangeDump;../../Vendor/BASS;./sound;./snow;../../Vendor/OrangeIni;../../Vendor/lua-5.1.4/src;../../Vendor/DirectMusic;../DXUtil;./Font"
+				AdditionalIncludeDirectories="./LuaTinker;../../Vendor/D3DCommon/Include;../AGF;../../Vendor/OrangeDump;../../Vendor/BASS;./sound;./snow;../../Vendor/OrangeIni;&quot;../../Vendor/lua-5.1.4/src&quot;;../../Vendor/DirectMusic;../DXUtil;./Font;&quot;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include&quot;"
 				PreprocessorDefinitions="WIN32;NDEBUG;_LIB"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
