@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4BD2C0B0-6476-4915-8ED4-99FD664FBB16}</ProjectGuid>
+    <RootNamespace>AGF</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>15.0.27625.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../Vendor/OrangeDump;../../Vendor/BASS;./sound;./Particle;../../Vendor/OrangeIni;../../Vendor/lua-5.1.4/src;../../Vendor/DirectMusic;../../Vendor/DirectX9.0/include;../DXUtil;./Font;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>..\Lib\$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>../../Vendor/OrangeDump;../../Vendor/BASS;./sound;./Particle;../../Vendor/OrangeIni;../../Vendor/lua-5.1.4/src;../../Vendor/DirectMusic;../../Vendor/DirectX9.0/include;../DXUtil;./Font;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>..\Lib\$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\DXUtil\dxstdafx.h" />
+    <ClInclude Include="..\DXUtil\DXUT.h" />
+    <ClInclude Include="..\DXUtil\DXUTcamera.h" />
+    <ClInclude Include="..\DXUtil\DXUTenum.h" />
+    <ClInclude Include="..\DXUtil\DXUTgui.h" />
+    <ClInclude Include="..\DXUtil\DXUTguiIME.h" />
+    <ClInclude Include="..\DXUtil\DXUTLockFreePipe.h" />
+    <ClInclude Include="..\DXUtil\DXUTmisc.h" />
+    <ClInclude Include="..\DXUtil\DXUTres.h" />
+    <ClInclude Include="..\DXUtil\DXUTsettingsdlg.h" />
+    <ClInclude Include="..\DXUtil\DXUTShapes.h" />
+    <ClInclude Include="..\DXUtil\ImeUi.h" />
+    <ClInclude Include="..\DXUtil\ScrollBarCtrl.h" />
+    <ClInclude Include="..\DXUtil\SDKmesh.h" />
+    <ClInclude Include="..\DXUtil\SDKmisc.h" />
+    <ClInclude Include="..\DXUtil\SDKsound.h" />
+    <ClInclude Include="..\DXUtil\SDKwavefile.h" />
+    <ClInclude Include="..\DXUtil\TextBoxCtrl.h" />
+    <ClInclude Include="CommonStructure.h" />
+    <ClInclude Include="Define.h" />
+    <ClInclude Include="DirectInput.h" />
+    <ClInclude Include="DirectMusicUtil.h" />
+    <ClInclude Include="DirectXEntity.h" />
+    <ClInclude Include="DirectXSystem.h" />
+    <ClInclude Include="DirectXUtil.h" />
+    <ClInclude Include="FontObject.h" />
+    <ClInclude Include="Font\direct3d9.h" />
+    <ClInclude Include="Font\font.h" />
+    <ClInclude Include="Font\Overlay.h" />
+    <ClInclude Include="Font\sample.h" />
+    <ClInclude Include="Font\video.h" />
+    <ClInclude Include="GameMusicManager.h" />
+    <ClInclude Include="GameSystem.h" />
+    <ClInclude Include="IRenderer.h" />
+    <ClInclude Include="LuaBindPanel.h" />
+    <ClInclude Include="Pannel.h" />
+    <ClInclude Include="PannelCallBack.h" />
+    <ClInclude Include="PannelComponent.h" />
+    <ClInclude Include="PannelManager.h" />
+    <ClInclude Include="Particle\camera.h" />
+    <ClInclude Include="Particle\d3dUtility.h" />
+    <ClInclude Include="Particle\pSystem.h" />
+    <ClInclude Include="PictureBox.h" />
+    <ClInclude Include="PictureBoxMgr.h" />
+    <ClInclude Include="ScreenMgr.h" />
+    <ClInclude Include="Sound\BassSoundManager.h" />
+    <ClInclude Include="Sound\MP3Player.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="TextScrollManager.h" />
+    <ClInclude Include="Win32Renderer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\DXUtil\dxstdafx.cpp" />
+    <ClCompile Include="..\DXUtil\DXUT.cpp" />
+    <ClCompile Include="..\DXUtil\DXUTcamera.cpp" />
+    <ClCompile Include="..\DXUtil\DXUTenum.cpp" />
+    <ClCompile Include="..\DXUtil\DXUTgui.cpp" />
+    <ClCompile Include="..\DXUtil\DXUTguiIME.cpp" />
+    <ClCompile Include="..\DXUtil\DXUTmisc.cpp" />
+    <ClCompile Include="..\DXUtil\DXUTres.cpp" />
+    <ClCompile Include="..\DXUtil\DXUTSettingsDlg.cpp" />
+    <ClCompile Include="..\DXUtil\DXUTShapes.cpp" />
+    <ClCompile Include="..\DXUtil\ImeUi.cpp" />
+    <ClCompile Include="..\DXUtil\SDKmesh.cpp" />
+    <ClCompile Include="..\DXUtil\SDKmisc.cpp" />
+    <ClCompile Include="..\DXUtil\SDKsound.cpp" />
+    <ClCompile Include="..\DXUtil\SDKwavefile.cpp" />
+    <ClCompile Include="..\DXUtil\TextBoxCtrl.cpp" />
+    <ClCompile Include="DirectInput.cpp" />
+    <ClCompile Include="DirectMusicUtil.cpp" />
+    <ClCompile Include="DirectXEntity.cpp" />
+    <ClCompile Include="DirectXSystem.cpp" />
+    <ClCompile Include="DirectXUtil.cpp" />
+    <ClCompile Include="FontObject.cpp" />
+    <ClCompile Include="Font\direct3d9.cpp" />
+    <ClCompile Include="Font\font.cpp" />
+    <ClCompile Include="Font\overlay.cpp" />
+    <ClCompile Include="Font\sample.cpp" />
+    <ClCompile Include="GameMusicManager.cpp" />
+    <ClCompile Include="GameSystem.cpp" />
+    <ClCompile Include="IRenderer.cpp" />
+    <ClCompile Include="LuaBindPanel.cpp" />
+    <ClCompile Include="Pannel.cpp" />
+    <ClCompile Include="PannelCallBack.cpp" />
+    <ClCompile Include="PannelComponent.cpp" />
+    <ClCompile Include="PannelManager.cpp" />
+    <ClCompile Include="Particle\camera.cpp" />
+    <ClCompile Include="Particle\d3dUtility.cpp" />
+    <ClCompile Include="Particle\pSystem.cpp" />
+    <ClCompile Include="PictureBox.cpp" />
+    <ClCompile Include="PictureBoxMgr.cpp" />
+    <ClCompile Include="ScreenMgr.cpp" />
+    <ClCompile Include="Sound\BassSoundManager.cpp" />
+    <ClCompile Include="Sound\MP3Player.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="TextScrollManager.cpp" />
+    <ClCompile Include="Win32Renderer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\DXUtil\icon1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

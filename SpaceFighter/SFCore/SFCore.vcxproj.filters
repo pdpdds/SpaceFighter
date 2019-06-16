@@ -1,0 +1,525 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="AIPattern">
+      <UniqueIdentifier>{d1d2d3e8-57a7-4034-acab-28600e0125ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base">
+      <UniqueIdentifier>{dff34e36-13a8-48b6-aa25-83c0edaa2776}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="D3DUtil">
+      <UniqueIdentifier>{7be306ab-9177-455b-b6ab-b133d0d055f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameState">
+      <UniqueIdentifier>{2a787a1d-bb15-4f58-a8b4-25560eb9d2bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuaTinker">
+      <UniqueIdentifier>{7807adb4-9f5a-4a99-a17c-77dc518cc0fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlaneObject">
+      <UniqueIdentifier>{fa1ff151-fa9d-4599-b7b5-b3b5d44a5ebe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlayerFSM">
+      <UniqueIdentifier>{664d8f11-80e6-4802-9dff-07c1691806ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{6e19a202-545c-4fa6-be0d-296eb7748139}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Terrain">
+      <UniqueIdentifier>{51f27314-40d1-491c-a220-3f266211034d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Water">
+      <UniqueIdentifier>{581b46c5-1316-4e91-a558-df73f9e7fbd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Weapon">
+      <UniqueIdentifier>{186d3e92-9aa9-4e41-92e6-9e7745fa20cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{1b4724cc-7231-4325-8fc3-d0c78382bd51}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="d3dfile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dxutil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgramMain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SFMessageDispatcher.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SFMessageReceiver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SFObjectFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SFObserver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SFSubject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SFAIPattern.cpp">
+      <Filter>AIPattern</Filter>
+    </ClCompile>
+    <ClCompile Include="SFAIPattern1.cpp">
+      <Filter>AIPattern</Filter>
+    </ClCompile>
+    <ClCompile Include="SFAIPatternFactory.cpp">
+      <Filter>AIPattern</Filter>
+    </ClCompile>
+    <ClCompile Include="SFAIRotation.cpp">
+      <Filter>AIPattern</Filter>
+    </ClCompile>
+    <ClCompile Include="SFAIStraight.cpp">
+      <Filter>AIPattern</Filter>
+    </ClCompile>
+    <ClCompile Include="SFAITrace.cpp">
+      <Filter>AIPattern</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="SFLuaBind.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="SFSystem.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimSequence.cpp">
+      <Filter>D3DUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera2.cpp">
+      <Filter>D3DUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="D3DHelper.cpp">
+      <Filter>D3DUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="GroundPlane.cpp">
+      <Filter>D3DUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="Helper.cpp">
+      <Filter>D3DUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="OBB.cpp">
+      <Filter>D3DUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="SFCamera.cpp">
+      <Filter>D3DUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="SFd3dUtil.cpp">
+      <Filter>D3DUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="SkyBox.cpp">
+      <Filter>D3DUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>D3DUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>D3DUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="Vertex.cpp">
+      <Filter>D3DUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="SFGameState.cpp">
+      <Filter>GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="SFGameStateEnding.cpp">
+      <Filter>GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="SFGameStateInit.cpp">
+      <Filter>GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="SFGameStateIntro.cpp">
+      <Filter>GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="SFGameStateMachine.cpp">
+      <Filter>GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="SFGameStateOption.cpp">
+      <Filter>GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="SFGameStatePlay.cpp">
+      <Filter>GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="SFGameStatePrologue.cpp">
+      <Filter>GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="SFGameStateTitle.cpp">
+      <Filter>GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaTinker\lua_tinker.cpp">
+      <Filter>LuaTinker</Filter>
+    </ClCompile>
+    <ClCompile Include="SFBomb.cpp">
+      <Filter>PlaneObject</Filter>
+    </ClCompile>
+    <ClCompile Include="SFBoss.cpp">
+      <Filter>PlaneObject</Filter>
+    </ClCompile>
+    <ClCompile Include="SFBossBigBird.cpp">
+      <Filter>PlaneObject</Filter>
+    </ClCompile>
+    <ClCompile Include="SFNormalPlane.cpp">
+      <Filter>PlaneObject</Filter>
+    </ClCompile>
+    <ClCompile Include="SFPlane.cpp">
+      <Filter>PlaneObject</Filter>
+    </ClCompile>
+    <ClCompile Include="SFTrigger.cpp">
+      <Filter>PlaneObject</Filter>
+    </ClCompile>
+    <ClCompile Include="SFPlayerDie.cpp">
+      <Filter>PlayerFSM</Filter>
+    </ClCompile>
+    <ClCompile Include="SFPlayerFSM.cpp">
+      <Filter>PlayerFSM</Filter>
+    </ClCompile>
+    <ClCompile Include="SFPlayerInit.cpp">
+      <Filter>PlayerFSM</Filter>
+    </ClCompile>
+    <ClCompile Include="SFPlayerLive.cpp">
+      <Filter>PlayerFSM</Filter>
+    </ClCompile>
+    <ClCompile Include="SFPlayerPlane.cpp">
+      <Filter>PlayerFSM</Filter>
+    </ClCompile>
+    <ClCompile Include="SFPlayerState.cpp">
+      <Filter>PlayerFSM</Filter>
+    </ClCompile>
+    <ClCompile Include="SFBackGround.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SFBackGroundParticle.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SFBackGroundTerrain.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SFBackGroundWater.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SFScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SFScene1.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SFScene2.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SFScene3.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Terrain.cpp">
+      <Filter>Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawableTex2D.cpp">
+      <Filter>Water</Filter>
+    </ClCompile>
+    <ClCompile Include="PondWater.cpp">
+      <Filter>Water</Filter>
+    </ClCompile>
+    <ClCompile Include="SFWeapon.cpp">
+      <Filter>Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="SFWeaponDefault.cpp">
+      <Filter>Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="SFWeaponFireWork.cpp">
+      <Filter>Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="SFWeaponSystem.cpp">
+      <Filter>Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="SFWeaponTwo.cpp">
+      <Filter>Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="SFRes.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="SFResAni.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="SFResFactory.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="SFResMesh.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="SFResMgr.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="d3dfile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dxutil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgramMain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SFConstant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SFDefine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SFMessageDispatcher.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SFMessageReceiver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SFObjectFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SFObserver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SFStructure.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SFSubject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SFAIPattern.h">
+      <Filter>AIPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="SFAIPattern1.h">
+      <Filter>AIPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="SFAIPatternFactory.h">
+      <Filter>AIPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="SFAIRotation.h">
+      <Filter>AIPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="SFAIStraight.h">
+      <Filter>AIPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="SFAITrace.h">
+      <Filter>AIPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="SFLuaBind.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="SFSystem.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimSequence.h">
+      <Filter>D3DUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera2.h">
+      <Filter>D3DUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="D3DHelper.h">
+      <Filter>D3DUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="GroundPlane.h">
+      <Filter>D3DUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="Helper.h">
+      <Filter>D3DUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="OBB.h">
+      <Filter>D3DUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="SFCamera.h">
+      <Filter>D3DUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="SFd3dUtil.h">
+      <Filter>D3DUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="SkyBox.h">
+      <Filter>D3DUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>D3DUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>D3DUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="Vertex.h">
+      <Filter>D3DUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="SFGameState.h">
+      <Filter>GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="SFGameStateEnding.h">
+      <Filter>GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="SFGameStateInit.h">
+      <Filter>GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="SFGameStateIntro.h">
+      <Filter>GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="SFGameStateMachine.h">
+      <Filter>GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="SFGameStateOption.h">
+      <Filter>GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="SFGameStatePlay.h">
+      <Filter>GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="SFGameStatePrologue.h">
+      <Filter>GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="SFGameStateTitle.h">
+      <Filter>GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaTinker\lauxlib.h">
+      <Filter>LuaTinker</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaTinker\lua.h">
+      <Filter>LuaTinker</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaTinker\lua_tinker.h">
+      <Filter>LuaTinker</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaTinker\luaconf.h">
+      <Filter>LuaTinker</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaTinker\lualib.h">
+      <Filter>LuaTinker</Filter>
+    </ClInclude>
+    <ClInclude Include="SFBomb.h">
+      <Filter>PlaneObject</Filter>
+    </ClInclude>
+    <ClInclude Include="SFBoss.h">
+      <Filter>PlaneObject</Filter>
+    </ClInclude>
+    <ClInclude Include="SFBossBigBird.h">
+      <Filter>PlaneObject</Filter>
+    </ClInclude>
+    <ClInclude Include="SFNormalPlane.h">
+      <Filter>PlaneObject</Filter>
+    </ClInclude>
+    <ClInclude Include="SFPlane.h">
+      <Filter>PlaneObject</Filter>
+    </ClInclude>
+    <ClInclude Include="SFTrigger.h">
+      <Filter>PlaneObject</Filter>
+    </ClInclude>
+    <ClInclude Include="SFPlayerDie.h">
+      <Filter>PlayerFSM</Filter>
+    </ClInclude>
+    <ClInclude Include="SFPlayerFSM.h">
+      <Filter>PlayerFSM</Filter>
+    </ClInclude>
+    <ClInclude Include="SFPlayerInit.h">
+      <Filter>PlayerFSM</Filter>
+    </ClInclude>
+    <ClInclude Include="SFPlayerLive.h">
+      <Filter>PlayerFSM</Filter>
+    </ClInclude>
+    <ClInclude Include="SFPlayerPlane.h">
+      <Filter>PlayerFSM</Filter>
+    </ClInclude>
+    <ClInclude Include="SFPlayerState.h">
+      <Filter>PlayerFSM</Filter>
+    </ClInclude>
+    <ClInclude Include="SFBackGround.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SFBackGroundParticle.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SFBackGroundTerrain.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SFBackGroundWater.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SFScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SFScene1.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SFScene2.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SFScene3.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Terrain.h">
+      <Filter>Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawableTex2D.h">
+      <Filter>Water</Filter>
+    </ClInclude>
+    <ClInclude Include="PondWater.h">
+      <Filter>Water</Filter>
+    </ClInclude>
+    <ClInclude Include="SFWeapon.h">
+      <Filter>Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="SFWeaponDefault.h">
+      <Filter>Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="SFWeaponFireWork.h">
+      <Filter>Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="SFWeaponSystem.h">
+      <Filter>Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="SFWeaponTwo.h">
+      <Filter>Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="SFRes.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="SFResAni.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="SFResFactory.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="SFResMesh.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="SFResMgr.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

@@ -257,13 +257,13 @@ D3DMATERIAL9 d3d::InitMtrl(D3DXCOLOR a, D3DXCOLOR d, D3DXCOLOR s, D3DXCOLOR e, f
 d3d::BoundingBox::BoundingBox()
 {
 	// infinite small 
-	_min.x = d3d::INFINITY;
-	_min.y = d3d::INFINITY;
-	_min.z = d3d::INFINITY;
+	_min.x = d3d::INFINITY__;
+	_min.y = d3d::INFINITY__;
+	_min.z = d3d::INFINITY__;
 
-	_max.x = -d3d::INFINITY;
-	_max.y = -d3d::INFINITY;
-	_max.z = -d3d::INFINITY;
+	_max.x = -d3d::INFINITY__;
+	_max.y = -d3d::INFINITY__;
+	_max.z = -d3d::INFINITY__;
 }
 
 bool d3d::BoundingBox::isPointInside(D3DXVECTOR3& p)

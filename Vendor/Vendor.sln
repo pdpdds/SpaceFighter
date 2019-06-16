@@ -1,11 +1,13 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OrangeIni", "OrangeIni\OrangeIni.vcproj", "{2322C594-136C-4DB5-B570-47ED48110944}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2047
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OrangeIni", "OrangeIni\OrangeIni.vcxproj", "{2322C594-136C-4DB5-B570-47ED48110944}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OrangeDump", "OrangeDump\OrangeDump.vcproj", "{AB8E7461-DB77-43CB-B3A9-F236455F9410}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OrangeDump", "OrangeDump\OrangeDump.vcxproj", "{AB8E7461-DB77-43CB-B3A9-F236455F9410}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lua", "lua-5.1.4\src\lua.vcproj", "{9BB3EFD0-97B5-43A6-8420-ED72E2B6EB80}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lua", "lua-5.1.4\src\lua.vcxproj", "{9BB3EFD0-97B5-43A6-8420-ED72E2B6EB80}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,5 +30,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A6BC9B0E-3862-470C-9E2D-BDBBFAE7FB46}
 	EndGlobalSection
 EndGlobal

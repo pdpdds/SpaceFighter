@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="DXUtil">
+      <UniqueIdentifier>{8d648755-5d34-48a6-af30-e6a72ac2eb95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sound">
+      <UniqueIdentifier>{8c210256-9dce-4998-95d0-5bf4d53a1f2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Particle">
+      <UniqueIdentifier>{e5c85e06-6655-4f9a-be88-2d9d7159abc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Font">
+      <UniqueIdentifier>{6722d707-6f45-483a-b919-2452775a6d95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component">
+      <UniqueIdentifier>{1233795c-011a-487a-96d9-1fd0235a5d24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameSystem">
+      <UniqueIdentifier>{2a852f24-59a8-4153-b10e-a762e1d5842e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base">
+      <UniqueIdentifier>{43f461c5-7f9f-411c-860e-d47a8e8ef058}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer">
+      <UniqueIdentifier>{8f8b45d6-5a4d-4321-89db-088ab79c66f1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CommonStructure.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Define.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectInput.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectMusicUtil.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXEntity.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXSystem.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXUtil.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FontObject.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMusicManager.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaBindPanel.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pannel.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PannelCallBack.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PannelComponent.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PannelManager.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PictureBox.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PictureBoxMgr.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ScreenMgr.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TextScrollManager.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXUtil\dxstdafx.h">
+      <Filter>DXUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXUtil\DXUT.h">
+      <Filter>DXUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXUtil\DXUTcamera.h">
+      <Filter>DXUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXUtil\DXUTenum.h">
+      <Filter>DXUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXUtil\DXUTgui.h">
+      <Filter>DXUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXUtil\DXUTguiIME.h">
+      <Filter>DXUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXUtil\DXUTLockFreePipe.h">
+      <Filter>DXUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXUtil\DXUTmisc.h">
+      <Filter>DXUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXUtil\DXUTres.h">
+      <Filter>DXUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXUtil\DXUTsettingsdlg.h">
+      <Filter>DXUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXUtil\DXUTShapes.h">
+      <Filter>DXUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXUtil\ImeUi.h">
+      <Filter>DXUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXUtil\ScrollBarCtrl.h">
+      <Filter>DXUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXUtil\SDKmesh.h">
+      <Filter>DXUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXUtil\SDKmisc.h">
+      <Filter>DXUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXUtil\SDKsound.h">
+      <Filter>DXUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXUtil\SDKwavefile.h">
+      <Filter>DXUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DXUtil\TextBoxCtrl.h">
+      <Filter>DXUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\BassSoundManager.h">
+      <Filter>Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\MP3Player.h">
+      <Filter>Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Particle\camera.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="Particle\d3dUtility.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="Particle\pSystem.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="Font\direct3d9.h">
+      <Filter>Font</Filter>
+    </ClInclude>
+    <ClInclude Include="Font\font.h">
+      <Filter>Font</Filter>
+    </ClInclude>
+    <ClInclude Include="Font\Overlay.h">
+      <Filter>Font</Filter>
+    </ClInclude>
+    <ClInclude Include="Font\sample.h">
+      <Filter>Font</Filter>
+    </ClInclude>
+    <ClInclude Include="Font\video.h">
+      <Filter>Font</Filter>
+    </ClInclude>
+    <ClInclude Include="GameSystem.h">
+      <Filter>GameSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="IRenderer.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Win32Renderer.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DirectInput.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectMusicUtil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectXEntity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectXSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectXUtil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FontObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMusicManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaBindPanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pannel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PannelCallBack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PannelComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PannelManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PictureBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PictureBoxMgr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ScreenMgr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TextScrollManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXUtil\dxstdafx.cpp">
+      <Filter>DXUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXUtil\DXUT.cpp">
+      <Filter>DXUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXUtil\DXUTcamera.cpp">
+      <Filter>DXUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXUtil\DXUTenum.cpp">
+      <Filter>DXUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXUtil\DXUTgui.cpp">
+      <Filter>DXUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXUtil\DXUTguiIME.cpp">
+      <Filter>DXUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXUtil\DXUTmisc.cpp">
+      <Filter>DXUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXUtil\DXUTres.cpp">
+      <Filter>DXUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXUtil\DXUTSettingsDlg.cpp">
+      <Filter>DXUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXUtil\DXUTShapes.cpp">
+      <Filter>DXUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXUtil\ImeUi.cpp">
+      <Filter>DXUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXUtil\SDKmesh.cpp">
+      <Filter>DXUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXUtil\SDKmisc.cpp">
+      <Filter>DXUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXUtil\SDKsound.cpp">
+      <Filter>DXUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXUtil\SDKwavefile.cpp">
+      <Filter>DXUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DXUtil\TextBoxCtrl.cpp">
+      <Filter>DXUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound\BassSoundManager.cpp">
+      <Filter>Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound\MP3Player.cpp">
+      <Filter>Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="Particle\camera.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="Particle\d3dUtility.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="Particle\pSystem.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="Font\direct3d9.cpp">
+      <Filter>Font</Filter>
+    </ClCompile>
+    <ClCompile Include="Font\font.cpp">
+      <Filter>Font</Filter>
+    </ClCompile>
+    <ClCompile Include="Font\overlay.cpp">
+      <Filter>Font</Filter>
+    </ClCompile>
+    <ClCompile Include="Font\sample.cpp">
+      <Filter>Font</Filter>
+    </ClCompile>
+    <ClCompile Include="GameSystem.cpp">
+      <Filter>GameSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="IRenderer.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Win32Renderer.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\DXUtil\icon1.ico">
+      <Filter>DXUtil</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

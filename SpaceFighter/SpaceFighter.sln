@@ -1,17 +1,13 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AGF", "AGF\AGF.vcproj", "{4BD2C0B0-6476-4915-8ED4-99FD664FBB16}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2047
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AGF", "AGF\AGF.vcxproj", "{4BD2C0B0-6476-4915-8ED4-99FD664FBB16}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SpaceFighter", "SpaceFighter\SpaceFighter.vcproj", "{7812CE38-2511-4767-9E1F-03ED1685D753}"
-	ProjectSection(ProjectDependencies) = postProject
-		{377A4439-DDF6-41FF-96D8-26567F6D8A31} = {377A4439-DDF6-41FF-96D8-26567F6D8A31}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SpaceFighter", "SpaceFighter\SpaceFighter.vcxproj", "{7812CE38-2511-4767-9E1F-03ED1685D753}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SFCore", "SFCore\SFCore.vcproj", "{377A4439-DDF6-41FF-96D8-26567F6D8A31}"
-	ProjectSection(ProjectDependencies) = postProject
-		{4BD2C0B0-6476-4915-8ED4-99FD664FBB16} = {4BD2C0B0-6476-4915-8ED4-99FD664FBB16}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SFCore", "SFCore\SFCore.vcxproj", "{377A4439-DDF6-41FF-96D8-26567F6D8A31}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,5 +30,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D0997A09-1096-4633-AF55-56298DBBEE33}
 	EndGlobalSection
 EndGlobal

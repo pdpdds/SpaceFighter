@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{377A4439-DDF6-41FF-96D8-26567F6D8A31}</ProjectGuid>
+    <RootNamespace>SFCore</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>15.0.27625.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>./LuaTinker;../../Vendor/D3DCommon/Include;../AGF;../../Vendor/OrangeDump;../../Vendor/BASS;./sound;./snow;../../Vendor/OrangeIni;../../Vendor/lua-5.1.4/src;../../Vendor/DirectMusic;../DXUtil;./Font;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <AdditionalLibraryDirectories>../../Vendor/LibD;../../Vendor/OrangeDump/Bugtrap;../../Vendor/BASS;../../Vendor/lua-5.1.4/src;../../Vendor/DirectMusic;../../Vendor/DirectShow/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>./LuaTinker;../../Vendor/D3DCommon/Include;../AGF;../../Vendor/OrangeDump;../../Vendor/BASS;./sound;./snow;../../Vendor/OrangeIni;../../Vendor/lua-5.1.4/src;../../Vendor/DirectMusic;../DXUtil;./Font;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <AdditionalLibraryDirectories>../../Vendor/Lib;../../Vendor/OrangeDump/Bugtrap;../../Vendor/BASS;../../Vendor/lua-5.1.4/src;../../Vendor/DirectMusic;../../Vendor/DirectShow/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AnimSequence.cpp" />
+    <ClCompile Include="Camera2.cpp" />
+    <ClCompile Include="d3dfile.cpp" />
+    <ClCompile Include="D3DHelper.cpp" />
+    <ClCompile Include="DrawableTex2D.cpp" />
+    <ClCompile Include="dxutil.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GroundPlane.cpp" />
+    <ClCompile Include="Helper.cpp" />
+    <ClCompile Include="LuaTinker\lua_tinker.cpp" />
+    <ClCompile Include="OBB.cpp" />
+    <ClCompile Include="PondWater.cpp" />
+    <ClCompile Include="ProgramMain.cpp" />
+    <ClCompile Include="SFAIPattern.cpp" />
+    <ClCompile Include="SFAIPattern1.cpp" />
+    <ClCompile Include="SFAIPatternFactory.cpp" />
+    <ClCompile Include="SFAIRotation.cpp" />
+    <ClCompile Include="SFAIStraight.cpp" />
+    <ClCompile Include="SFAITrace.cpp" />
+    <ClCompile Include="SFBackGround.cpp" />
+    <ClCompile Include="SFBackGroundParticle.cpp" />
+    <ClCompile Include="SFBackGroundTerrain.cpp" />
+    <ClCompile Include="SFBackGroundWater.cpp" />
+    <ClCompile Include="SFBomb.cpp" />
+    <ClCompile Include="SFBoss.cpp" />
+    <ClCompile Include="SFBossBigBird.cpp" />
+    <ClCompile Include="SFCamera.cpp" />
+    <ClCompile Include="SFd3dUtil.cpp" />
+    <ClCompile Include="SFGameState.cpp" />
+    <ClCompile Include="SFGameStateEnding.cpp" />
+    <ClCompile Include="SFGameStateInit.cpp" />
+    <ClCompile Include="SFGameStateIntro.cpp" />
+    <ClCompile Include="SFGameStateMachine.cpp" />
+    <ClCompile Include="SFGameStateOption.cpp" />
+    <ClCompile Include="SFGameStatePlay.cpp" />
+    <ClCompile Include="SFGameStatePrologue.cpp" />
+    <ClCompile Include="SFGameStateTitle.cpp" />
+    <ClCompile Include="SFLuaBind.cpp" />
+    <ClCompile Include="SFMessageDispatcher.cpp" />
+    <ClCompile Include="SFMessageReceiver.cpp" />
+    <ClCompile Include="SFNormalPlane.cpp" />
+    <ClCompile Include="SFObjectFactory.cpp" />
+    <ClCompile Include="SFObserver.cpp" />
+    <ClCompile Include="SFPlane.cpp" />
+    <ClCompile Include="SFPlayerDie.cpp" />
+    <ClCompile Include="SFPlayerFSM.cpp" />
+    <ClCompile Include="SFPlayerInit.cpp" />
+    <ClCompile Include="SFPlayerLive.cpp" />
+    <ClCompile Include="SFPlayerPlane.cpp" />
+    <ClCompile Include="SFPlayerState.cpp" />
+    <ClCompile Include="SFRes.cpp" />
+    <ClCompile Include="SFResAni.cpp" />
+    <ClCompile Include="SFResFactory.cpp" />
+    <ClCompile Include="SFResMesh.cpp" />
+    <ClCompile Include="SFResMgr.cpp" />
+    <ClCompile Include="SFScene.cpp" />
+    <ClCompile Include="SFScene1.cpp" />
+    <ClCompile Include="SFScene2.cpp" />
+    <ClCompile Include="SFScene3.cpp" />
+    <ClCompile Include="SFSubject.cpp" />
+    <ClCompile Include="SFSystem.cpp" />
+    <ClCompile Include="SFTrigger.cpp" />
+    <ClCompile Include="SFWeapon.cpp" />
+    <ClCompile Include="SFWeaponDefault.cpp" />
+    <ClCompile Include="SFWeaponFireWork.cpp" />
+    <ClCompile Include="SFWeaponSystem.cpp" />
+    <ClCompile Include="SFWeaponTwo.cpp" />
+    <ClCompile Include="SkyBox.cpp" />
+    <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Terrain.cpp" />
+    <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="Vertex.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AnimSequence.h" />
+    <ClInclude Include="Camera2.h" />
+    <ClInclude Include="d3dfile.h" />
+    <ClInclude Include="D3DHelper.h" />
+    <ClInclude Include="DrawableTex2D.h" />
+    <ClInclude Include="dxutil.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="GroundPlane.h" />
+    <ClInclude Include="Helper.h" />
+    <ClInclude Include="LuaTinker\lauxlib.h" />
+    <ClInclude Include="LuaTinker\lua.h" />
+    <ClInclude Include="LuaTinker\luaconf.h" />
+    <ClInclude Include="LuaTinker\lualib.h" />
+    <ClInclude Include="LuaTinker\lua_tinker.h" />
+    <ClInclude Include="OBB.h" />
+    <ClInclude Include="PondWater.h" />
+    <ClInclude Include="ProgramMain.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="SFAIPattern.h" />
+    <ClInclude Include="SFAIPattern1.h" />
+    <ClInclude Include="SFAIPatternFactory.h" />
+    <ClInclude Include="SFAIRotation.h" />
+    <ClInclude Include="SFAIStraight.h" />
+    <ClInclude Include="SFAITrace.h" />
+    <ClInclude Include="SFBackGround.h" />
+    <ClInclude Include="SFBackGroundParticle.h" />
+    <ClInclude Include="SFBackGroundTerrain.h" />
+    <ClInclude Include="SFBackGroundWater.h" />
+    <ClInclude Include="SFBomb.h" />
+    <ClInclude Include="SFBoss.h" />
+    <ClInclude Include="SFBossBigBird.h" />
+    <ClInclude Include="SFCamera.h" />
+    <ClInclude Include="SFConstant.h" />
+    <ClInclude Include="SFd3dUtil.h" />
+    <ClInclude Include="SFDefine.h" />
+    <ClInclude Include="SFGameState.h" />
+    <ClInclude Include="SFGameStateEnding.h" />
+    <ClInclude Include="SFGameStateInit.h" />
+    <ClInclude Include="SFGameStateIntro.h" />
+    <ClInclude Include="SFGameStateMachine.h" />
+    <ClInclude Include="SFGameStateOption.h" />
+    <ClInclude Include="SFGameStatePlay.h" />
+    <ClInclude Include="SFGameStatePrologue.h" />
+    <ClInclude Include="SFGameStateTitle.h" />
+    <ClInclude Include="SFLuaBind.h" />
+    <ClInclude Include="SFMessageDispatcher.h" />
+    <ClInclude Include="SFMessageReceiver.h" />
+    <ClInclude Include="SFNormalPlane.h" />
+    <ClInclude Include="SFObjectFactory.h" />
+    <ClInclude Include="SFObserver.h" />
+    <ClInclude Include="SFPlane.h" />
+    <ClInclude Include="SFPlayerDie.h" />
+    <ClInclude Include="SFPlayerFSM.h" />
+    <ClInclude Include="SFPlayerInit.h" />
+    <ClInclude Include="SFPlayerLive.h" />
+    <ClInclude Include="SFPlayerPlane.h" />
+    <ClInclude Include="SFPlayerState.h" />
+    <ClInclude Include="SFRes.h" />
+    <ClInclude Include="SFResAni.h" />
+    <ClInclude Include="SFResFactory.h" />
+    <ClInclude Include="SFResMesh.h" />
+    <ClInclude Include="SFResMgr.h" />
+    <ClInclude Include="SFScene.h" />
+    <ClInclude Include="SFScene1.h" />
+    <ClInclude Include="SFScene2.h" />
+    <ClInclude Include="SFScene3.h" />
+    <ClInclude Include="SFStructure.h" />
+    <ClInclude Include="SFSubject.h" />
+    <ClInclude Include="SFSystem.h" />
+    <ClInclude Include="SFTrigger.h" />
+    <ClInclude Include="SFWeapon.h" />
+    <ClInclude Include="SFWeaponDefault.h" />
+    <ClInclude Include="SFWeaponFireWork.h" />
+    <ClInclude Include="SFWeaponSystem.h" />
+    <ClInclude Include="SFWeaponTwo.h" />
+    <ClInclude Include="SkyBox.h" />
+    <ClInclude Include="Sprite.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="Terrain.h" />
+    <ClInclude Include="Timer.h" />
+    <ClInclude Include="Vertex.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AGF\AGF.vcxproj">
+      <Project>{4bd2c0b0-6476-4915-8ed4-99fd664fbb16}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
