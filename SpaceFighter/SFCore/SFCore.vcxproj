@@ -14,18 +14,18 @@
     <ProjectGuid>{377A4439-DDF6-41FF-96D8-26567F6D8A31}</ProjectGuid>
     <RootNamespace>SFCore</RootNamespace>
     <Keyword>Win32Proj</Keyword>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -52,7 +52,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>./LuaTinker;../../Vendor/D3DCommon/Include;../AGF;../../Vendor/OrangeDump;../../Vendor/BASS;./sound;./snow;../../Vendor/OrangeIni;../../Vendor/lua-5.1.4/src;../../Vendor/DirectMusic;../DXUtil;./Font;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./LuaTinker;../../Vendor/D3DCommon/Include;../AGF;../../Vendor/OrangeDump;../../Vendor/BASS;./sound;./snow;../../Vendor/OrangeIni;../../Vendor/lua-5.1.4/src;../../Vendor/DirectMusic;../DXUtil;./Font;../../Vendor\DirectX9.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -69,7 +69,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>./LuaTinker;../../Vendor/D3DCommon/Include;../AGF;../../Vendor/OrangeDump;../../Vendor/BASS;./sound;./snow;../../Vendor/OrangeIni;../../Vendor/lua-5.1.4/src;../../Vendor/DirectMusic;../DXUtil;./Font;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./LuaTinker;../../Vendor/D3DCommon/Include;../AGF;../../Vendor/OrangeDump;../../Vendor/BASS;./sound;./snow;../../Vendor/OrangeIni;../../Vendor/lua-5.1.4/src;../../Vendor/DirectMusic;../DXUtil;./Font;../../Vendor\DirectX9.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>

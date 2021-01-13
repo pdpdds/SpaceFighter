@@ -14,18 +14,18 @@
     <ProjectGuid>{7812CE38-2511-4767-9E1F-03ED1685D753}</ProjectGuid>
     <RootNamespace>SpaceFighter</RootNamespace>
     <Keyword>Win32Proj</Keyword>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -64,17 +64,18 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>../../Vendor/LibD;../../Vendor/OrangeDump/Bugtrap;../../Vendor/BASS;../../Vendor/lua-5.1.4/src;../../Vendor/DirectMusic;../../Vendor/DirectShow/lib;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../Vendor/LibD;../../Vendor/OrangeDump/Bugtrap;../../Vendor/BASS;../../Vendor/lua-5.1.4/src;../../Vendor/DirectMusic;../../Vendor/DirectShow/lib;../../Vendor\DirectX9.0\Lib/x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>./LuaTinker;../../Vendor/D3DCommon/Include;../AGF;../../Vendor/OrangeDump;../../Vendor/BASS;./sound;./snow;../../Vendor/OrangeIni;../../Vendor/lua-5.1.4/src;../../Vendor/DirectMusic;../../Vendor/DirectX9.0/include;../DXUtil;./Font;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./LuaTinker;../../Vendor/D3DCommon/Include;../AGF;../../Vendor/OrangeDump;../../Vendor/BASS;./sound;./snow;../../Vendor/OrangeIni;../../Vendor/lua-5.1.4/src;../../Vendor/DirectMusic;../../Vendor/DirectX9.0/include;../DXUtil;./Font;../../Vendor\DirectX9.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -83,7 +84,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>../../Vendor/Lib;../../Vendor/OrangeDump/Bugtrap;../../Vendor/BASS;../../Vendor/lua-5.1.4/src;../../Vendor/DirectMusic;../../Vendor/DirectShow/lib;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../Vendor/Lib;../../Vendor/OrangeDump/Bugtrap;../../Vendor/BASS;../../Vendor/lua-5.1.4/src;../../Vendor/DirectMusic;../../Vendor/DirectShow/lib;../../Vendor\DirectX9.0\Lib/x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>

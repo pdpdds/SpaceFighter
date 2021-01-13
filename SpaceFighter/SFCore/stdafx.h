@@ -37,11 +37,13 @@
 
 #ifdef _DEBUG
 #pragma comment(lib, "d3dx9d.lib")
+#pragma comment(lib, "d3dx10d.lib")
 #else
 #pragma comment(lib, "d3dx9.lib")
+#pragma comment(lib, "d3dx10.lib")
 #endif
 
-#pragma comment(lib, "d3dx10.lib")
+
 #pragma comment(lib, "winmm.lib")
 #pragma comment(lib, "comctl32.lib")
 #pragma comment(lib, "dxguid.lib")
