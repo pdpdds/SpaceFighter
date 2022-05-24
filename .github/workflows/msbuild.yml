@@ -30,7 +30,7 @@ jobs:
       
     - name: Vendor
       working-directory: ${{env.GITHUB_WORKSPACE}}Vendor
-      run: msbuild Vendor.sln /t:Build /p:Platform=x86  
+      run: msbuild Vendor.sln /t:Build /p:Configuration=Release /p:Platform=x86  
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
       # Add additional options to the MSBuild command line here (like platform or verbosity level).
