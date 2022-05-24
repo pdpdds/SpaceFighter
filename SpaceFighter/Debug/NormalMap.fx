@@ -121,7 +121,7 @@ float4 NormalMapPS(float3 toEyeT    : TEXCOORD0,
 	float3 r = reflect(-lightVecT, normalT);
 	
 	// Determine how much (if any) specular light makes it into the eye.
-	float t  = pow(max(dot(r, toEyeT), 0.0f), gMtrl.specPower);
+	float t  = pow(abs(max(dot(r, toEyeT), 0.0f)), gMtrl.specPower);
 	
 	// Determine the diffuse light intensity that strikes the vertex.
 	float s = max(dot(lightVecT, normalT), 0.0f);

@@ -61,7 +61,7 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>../../Vendor/LibD;../../Vendor/OrangeDump/Bugtrap;../../Vendor/BASS;../../Vendor/lua-5.1.4/src;../../Vendor/DirectMusic;../../Vendor/DirectShow/lib;../../Vendor\DirectX9.0\Lib/x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -75,7 +75,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>./LuaTinker;../../Vendor/D3DCommon/Include;../AGF;../../Vendor/OrangeDump;../../Vendor/BASS;./sound;./snow;../../Vendor/OrangeIni;../../Vendor/lua-5.1.4/src;../../Vendor/DirectMusic;../../Vendor/DirectX9.0/include;../DXUtil;./Font;../../Vendor\DirectX9.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./LuaTinker;../../Vendor/D3DCommon/Include;../AGF;../../Vendor/OrangeDump;../../Vendor/BASS;./sound;./snow;../../Vendor/OrangeIni;../../Vendor/lua-5.1.4/src;../../Vendor/DirectMusic;../DXUtil;./Font;../../Vendor/DirectX9.0/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>

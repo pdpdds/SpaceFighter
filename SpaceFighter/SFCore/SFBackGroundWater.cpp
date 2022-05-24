@@ -311,7 +311,7 @@ void SFBackGroundWater::buildFX()
 	HR(D3DXCreateEffectFromFile(gd3dDevice, _T("NormalMap.fx"), 
 		0, 0, 0, 0, &mFX, &errors));
 	if( errors )
-		MessageBox(0, (TCHAR*)errors->GetBufferPointer(), 0, 0);
+		MessageBoxA(0, (LPCSTR)errors->GetBufferPointer(), 0, 0);
 
 	// Obtain handles.
 	mhTech       = mFX->GetTechniqueByName("NormalMapTech");
